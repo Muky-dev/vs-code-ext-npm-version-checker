@@ -67,7 +67,7 @@ async function checkVersions() {
 
   if (mismatches.length > 0) {
     output.clear();
-    output.appendLine("🚨 Packages mismatches:");
+    output.appendLine("🚨 Packages out of declared version:");
     mismatches.forEach((msg) => output.appendLine(msg));
     output.show(true);
 
