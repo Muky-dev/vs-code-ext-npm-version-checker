@@ -8,7 +8,7 @@ const output = vscode.window.createOutputChannel("NPM Version Checker");
 export function activate(context: vscode.ExtensionContext) {
   const command = "npm-version-checker.checkVersions";
 
-  // Executa ao abrir o VSCode no projeto
+  // Executes when VSCode is opened
   checkVersions();
 
   // Manual command via Ctrl+Shift+P
@@ -66,7 +66,6 @@ async function checkVersions() {
   }
 
   if (mismatches.length > 0) {
-    // Mostra no Output Channel
     output.clear();
     output.appendLine("🚨 Packages mismatches:");
     mismatches.forEach((msg) => output.appendLine(msg));
