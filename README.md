@@ -1,71 +1,66 @@
-# node-modules-watcher README
+# Node Modules Version Checker
 
-This is the README for your extension "node-modules-watcher". After writing up a brief description, we recommend including the following sections.
+## Description
+
+This Visual Studio Code extension helps ensure that the versions of packages installed in the `node_modules` directory match the versions specified in the `package.json` file of your project.
+
+The main functionality is to compare the declared versions of dependencies in the `package.json` with the versions actually installed in the modules and show warnings if there are discrepancies.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- **Package version check**: Compares the versions of installed packages with the versions declared in `package.json`.
+- **Discrepancy alerts**: Displays an alert in VSCode if any installed package does not match the version specified in `package.json`.
+- **Manual command**: You can run the version check manually via the command `npm-version-checker.checkVersions`.
+- **Watcher**: The extension will automatically perform the check when the `package.json` file is modified.
 
-For example if there is an image subfolder under your extension project workspace:
+## Installation
 
-\!\[feature X\]\(images/feature-x.png\)
+1. Open VSCode.
+2. Go to the **Extensions** panel (Ctrl+Shift+X).
+3. Search for **Node Modules Version Checker** and click **Install**.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+Alternatively, if you're developing the extension locally, run the following commands:
 
-## Requirements
+```bash
+git clone <repository_URL>
+cd <project_directory>
+npm install
+npm run compile
+```
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## Usage
 
-## Extension Settings
+### Manual Command
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+1. Open the **Command Palette** (Ctrl+Shift+P).
+2. Type `NPM Version Checker: Check Versions` and press Enter.
 
-For example:
+### Automatic Check
 
-This extension contributes the following settings:
+The version check will be performed automatically whenever the `package.json` file is modified.
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+### Check Results
 
-## Known Issues
+- If any installed package does not match the version in `package.json`, a warning will appear in the **status bar** of VSCode, and the discrepancies will be listed in the **Output Channel**.
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+### Example of Alert:
 
-## Release Notes
+```
+🚨 Packages out of declared version:
+⚠️ package-a: installed 1.2.3 ≠ declared 1.2.0
+⚠️ package-b: installed 3.4.0 ≠ declared 3.4.1
+```
 
-Users appreciate release notes as you update your extension.
+### How It Works
 
-### 1.0.0
+1. The extension reads the dependencies from `package.json`.
+2. It compares the versions of the dependencies with the versions installed in the `node_modules` directory.
+3. If any discrepancies are found, the extension will display an alert.
 
-Initial release of ...
+## Contributing
 
-### 1.0.1
+Feel free to contribute! If you encounter any bugs or have suggestions, please open an **issue** or **pull request**.
 
-Fixed issue #.
+## License
 
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
