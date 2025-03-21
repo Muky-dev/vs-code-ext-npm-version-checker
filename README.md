@@ -59,7 +59,7 @@ The version check will be performed automatically whenever the `package.json` fi
 
 ### To do
 
-- [] Add a button to run `npm install` whenever it founds any mismatch.
+- [ ] Add a button to run `npm install` whenever it founds any mismatch.
 
 ## Contributing
 
