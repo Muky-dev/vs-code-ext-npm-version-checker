@@ -10,7 +10,7 @@ The main functionality is to compare the declared versions of dependencies in th
 
 - **Package version check**: Compares the versions of installed packages with the versions declared in `package.json`.
 - **Discrepancy alerts**: Displays an alert in VSCode if any installed package does not match the version specified in `package.json`.
-- **Manual command**: You can run the version check manually via the command `npm-version-checker.checkVersions`.
+- **Manual command**: You can run the version check manually via the command `NPM Version Checker: Check Versions`.
 - **Watcher**: The extension will automatically perform the check when the `package.json` file is modified.
 
 ## Installation
