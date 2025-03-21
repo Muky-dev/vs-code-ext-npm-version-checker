@@ -57,6 +57,10 @@ The version check will be performed automatically whenever the `package.json` fi
 2. It compares the versions of the dependencies with the versions installed in the `node_modules` directory.
 3. If any discrepancies are found, the extension will display an alert.
 
+### To do
+
+- [] Add a button to run `npm install` whenever it founds any mismatch.
+
 ## Contributing
 
 Feel free to contribute! If you encounter any bugs or have suggestions, please open an **issue** or **pull request**.
